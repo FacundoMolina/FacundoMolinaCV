@@ -1,0 +1,9 @@
+<div *ngFor="let proy of cv.proyectos">
+    <div class="exp">
+        <div class="hgroup">
+            <h4><span>{{ proy.Nombre }}</span></h4>
+        </div>
+        <li>Web: <a href="{{ proy.web }}">{{ proy.web }}</a></li>
+        <li>Github: <a href="{{ proy.git }}">{{ proy.git }}</a></li>
+    </div>
+</div>

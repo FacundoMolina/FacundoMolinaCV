@@ -1,0 +1,89 @@
+<section class="content" id="about">
+    <div class="block-content">
+        <h3 class="block-title">Perfil</h3>
+        <h3 class="subheading">¡Hola! soy Facundo Molina <strong>Tecnico Universitario en Informatica & Estudiante de Ingenieria en Informatica</strong></h3>
+        <p>Soy Técnico Universitario en Informática (título intermedio de Ingeniería en Informática).
+            Estudiante de 5 año de Ingeniería Informática. Con el 80% de la carrera finalizada
+            Idioma: Inglés. Instituto de Goog News. Certificado Trinity nivel 7
+            
+            Experiencia laboral:
+            Inteligencia de negocio en Inusual. 4 meses. Utilice Python y manejo de Powe BI
+            Pasantía en Silentium Apps. 3 meses. Programe en C# y en Angular
+            
+            Lenguajes de programación que utilizo:
+            JS
+            CSS
+            SQL
+            Python
+            C#
+            PHP
+            Java
+            Visual Basic
+            
+            Cursos realizados:
+            Master de Udemy en Python, Django, Flask y Tkinter
+            Master de Udemy en JavaScript, JS jQuery, Angular, NodeJs.
+            Certificado de IBM en Python for Data Science, AI & Development
+            Curso PHP en Udemy
+            Python for data science en Coursera dictado por IBM
+            Actualmente estoy haciendo el curso de Angular de Fernando Herrera
+            
+            GitHub: https://github.com/FacundoMolina?tab=repositories</p>
+        <div class="info-list row">
+            <div class="col-sm-6"><span>Nombre : </span> Molina Facundo</div>
+            <div class="col-sm-6"><span>Fecha de Nacimiento : </span> Marzo 28, 1996 </div>
+            <div class="col-sm-6"><span>Email : </span> facundomolina2013@gmail.com</div>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3 class="block-title">Profesional</h3>
+        <div *ngFor="let profex of cv.profesional">
+          <label class="progress-bar-label">{{ profex.nombre }}</label>
+          <div class="progress">
+              <div [style.width.%]=profex.valor class="progress-bar" role="progressbar" attr.aria-valuenow="{{ profex.valor }}" aria-valuemin="0" aria-valuemax="100">
+                  <span>{{ profex.valor }}%</span>
+              </div>
+          </div>
+        </div>
+    </div>
+    <div class="block-content"> <!-- Experiencia -->
+        <h3 class="block-title">Experiencia</h3>
+        <div class="timeline experience">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="exp-holder">
+                        <div *ngFor="let expex of cv.experiencia">
+                          <div class="exp">
+                              <div class="hgroup">
+                                  <h4><span>{{ expex.Empresa }}</span></h4>
+                                  <h5> {{ expex.Fecha }} </h5>
+                              </div>
+                              <p>{{ expex.Descripcion }}</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content"> <!-- Educacion -->
+        <h3 class="block-title">Educación</h3>
+        <div class="timeline education">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="exp-holder">
+                      <div *ngFor="let edux of cv.educacion">
+                        <div class="exp">
+                            <div class="hgroup">
+                                <h4>{{ edux.Nombre }} | <a href="{{ edux.URL }}" target="\_blank"><span>Ver Certificado</span></a></h4>
+                                <h5>{{ edux.Fecha }}</h5>
+                            </div>
+                            <p>{{ edux.Descripcion }}</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
