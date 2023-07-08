@@ -1,24 +1,20 @@
 <section class="content" id="about">
-    <div class="block-content">
-        <h3 class="block-title">Perfil</h3>
-        <h3 class="subheading">¡Hola! soy Facundo Molina <strong>Tecnico Universitario en Informatica & Estudiante de Ingenieria en Informatica</strong></h3>
-        <p>Soy Técnico Universitario en Informática (título intermedio de Ingeniería en Informática).
-            Estudiante de 5 año de Ingeniería Informática. Con el 83.33% de la carrera finalizada
-            Idioma: Inglés. Instituto de Goog News. Certificado Trinity nivel 7.
-            
-            Cursos realizados:
-            Master de Udemy en Python, Django, Flask y Tkinter
-            Master de Udemy en JavaScript, JS jQuery, Angular, NodeJs.
-            Certificado de IBM en Python for Data Science, AI & Development
-            Curso PHP en Udemy
-            Python for data science en Coursera dictado por IBM
-            Actualmente estoy haciendo el curso de Angular de Fernando Herrera
-            
-            GitHub: https://github.com/FacundoMolina?tab=repositories</p>
-        <div class="info-list row">
-            <div class="col-sm-6"><span>Nombre : </span> Molina Facundo</div>
-            <div class="col-sm-6"><span>Fecha de Nacimiento : </span> Marzo 28, 1996 </div>
-            <div class="col-sm-6"><span>Email : </span> facundomolina2013@gmail.com</div>
+    <div class="block-content"> <!-- Ingles -->
+        <h3 class="block-title">Idiomas</h3>
+        <div class="timeline education">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="exp-holder">
+                        <div *ngFor="let idio of cv.idioma"> 
+                          <div class="exp">
+                              <div class="hgroup">
+                                <h4><span>{{ idio.descripcion }}</span></h4>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="block-content">
@@ -67,6 +63,24 @@
                             <p>{{ edux.Descripcion }}</p>
                         </div>
                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content"> <!-- Cursos realizados -->
+        <h3 class="block-title">Cursos realizados</h3>
+        <div class="timeline experience">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="exp-holder">
+                        <div *ngFor="let cur of cv.cursos">
+                          <div class="exp">
+                              <div class="hgroup">
+                                <h4><span>{{ cur.nombre }}</span></h4>
+                              </div>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>

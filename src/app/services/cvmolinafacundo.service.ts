@@ -5,20 +5,37 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CvmolinafacundoService {
-
+  cursos: any[] = [];
+  idioma: any[] = [];
   profesional: any[] = [];
-  educacion: any[] = [];
   experiencia: any[] = [];
+  educacion: any[] = [];
   proyectos: any[] = [];
   /* cv: any; */
 
   constructor(private http: HttpClient) {
+    this.CargarIdioma();
+    this.CargarCursos();
     this.CargarProfesional();
-    this.CargarEducacion();
     this.CargarExperiencia();
+    this.CargarEducacion();
     this.CargarProyectos();
   }
-
+  /*'https://cv-molinafacundo-default-rtdb.firebaseio.com/Cursos%20realizados.json'*/
+  private CargarIdioma(){
+    this.http.get('https://cv-molinafacundo-default-rtdb.firebaseio.com/Idioma.json')
+      .subscribe((resp: any) => {
+        this.idioma = resp;
+        console.log(resp);
+    });
+  }
+  private CargarCursos(){
+    this.http.get('https://cv-molinafacundo-default-rtdb.firebaseio.com/Cursos%20realizados.json')
+      .subscribe((resp: any) => {
+        this.cursos = resp;
+        console.log(resp);
+    });
+  }
   private CargarProfesional(){
     this.http.get('https://cv-molinafacundo-default-rtdb.firebaseio.com/Profesional.json')
       .subscribe((resp: any) => {
